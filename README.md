@@ -1,8 +1,7 @@
-# AUCTION-Items
-ITs presented byt he group 6
+# Project Title: Auction System Using AVL Tree (Self-Balancing Binary Search Tree)
+ITs presented by the group 6
 
 AUCTION SYSTEM — Project Idea / Plot
-Project Title: Auction System Using AVL Tree (Self-Balancing Binary Search Tree)
 Project Idea
 The Auction System is a C++ program that allows users to participate in online-style auctions. Users can register their names and receive an automatically generated four-digit ID number. After logging in, they can browse available auction items, view item details and pictures, post their own items for auction, and place bids on items they want to purchase.
 
