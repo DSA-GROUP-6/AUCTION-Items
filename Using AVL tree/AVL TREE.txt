@@ -1,0 +1,13 @@
+TITLE NG FILE: AVL Tree integration
+
+1. Auction Item AVL Tree
+
+Store each item using a unique item ID as its key. Each node can contain the item name, seller ID, starting bid, and current highest bid.
+
+2. User Records
+
+Store each user's name and automatically generated 4-digit ID. You can also use an AVL Tree keyed by user ID if you want efficient user searching.
+
+3. Highest Bid and Winner
+
+Keep the highest bid and bidder's details in each item record. When a new valid bid is higher, update that record.
