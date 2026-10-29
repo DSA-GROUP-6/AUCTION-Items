@@ -18,6 +18,7 @@ Phase 1: User Entry & Main Menu Navigation
 Phase 2: Posting a New Item for Auction
 1. Initiation: The user selects "Post Item for Auction" from the main menu.   
 2  Data Input: The system requests inputs for:
+   
   •	Item details/name   
   •	Starting bid amount   
 
