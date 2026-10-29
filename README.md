@@ -1,30 +1,46 @@
 # Project Title: Auction System Using AVL Tree (Self-Balancing Binary Search Tree)
 ITs presented by the group 6
 
-AUCTION SYSTEM — Project Idea / Plot
-Project Idea
-The Auction System is a C++ program that allows users to participate in online-style auctions. Users can register their names and receive an automatically generated four-digit ID number. After logging in, they can browse available auction items, view item details and pictures, post their own items for auction, and place bids on items they want to purchase.
+The project is an interactive Online Auction System designed to allow users to securely log in, browse active auction items, post new listings with starting bid prices, and place competitive bids in real time.   
 
-Each item has a starting bid, and users can submit higher bids to compete with other bidders. The system automatically tracks the current highest bid and displays the bidder's name and ID. When the auction ends, the user with the highest valid bid is declared the winner.
+To handle high-volume bidding without system slowdowns, the backend utilizes an AVL Tree (Self-Balancing Binary Search Tree). This data structure ensures that inserting new bids and identifying the current highest bidder always operates at maximum efficiency (O(\log n)O(logn) performance).   
 
-The system uses an AVL Tree, a self-balancing Binary Search Tree, to organize auction item records and support efficient searching and insertion. The tree maintains a balanced structure through rotations, allowing these operations to run in \(O(\log n)\) time.
-Project Plot
-The system begins when a user opens the Auction System and chooses to register or log in. After successfully entering the system, the user's name and ID number are displayed at the top of the menu.
+The operational flow of the system follows a logical sequence from start to finish, as illustrated in the system flowchart:   
 
-The user can then browse the available auction items, view their names, pictures, starting bids, and current highest bids. If the user wants to sell an item, they can post it for auction by providing its name, description, picture, and starting bid.
+Phase 1: User Entry & Main Menu Navigation
+1. System Initialization: The user launches the application and is presented with the Main Menu Hub (2B).
+     
+2. Action Selection: The system prompts the user to select one of three primary paths:   
+  •	Browse Auction Items   
+  •	Post Item for Auction   
+  •	View Highest Bid   
 
-When a user selects an item, the system displays its details and allows the user to place a bid. The system checks whether the new bid is higher than the current highest bid. If it is valid, the system updates the highest bid and records the bidder's information. If the bid is too low, the system rejects it and asks the user to enter a higher amount.
+Phase 2: Posting a New Item for Auction
+1. Initiation: The user selects "Post Item for Auction" from the main menu.   
+2  Data Input: The system requests inputs for:
+  •	Item details/name   
+  •	Starting bid amount   
 
-After placing a bid, the user can choose to browse other items or stop bidding. When the auction closes, the system identifies the highest valid bidder as the winner and displays the winning amount, item name, winner's name, and ID number.
 
-Throughout the process, the AVL Tree helps manage the auction item records efficiently, making the system organized and easier to search.
-Main Objectives
-1. To develop a C++ auction system with user registration and automatically generated ID numbers.
-2. To allow users to post, browse, and select auction items.
-3. To implement a bidding system that tracks and updates the highest bid.
-4. To automatically identify the winner based on the highest valid bid when the auction closes.
-5. To apply AVL Tree operations for efficient item searching and insertion.
-6. To provide a simple and user-friendly console interface for auction participants.
+3. Display & Confirmation: The system outputs the newly created listing showing the item name and starting bid, then prompts: "Save?"   
+4. Data Storage:
+  •	If YES: The item is saved directly into the main database (4D), making it immediately available for bidding. The system then loops back to the main menu (3C).   
+  •	If NO: The item is discarded, and the session terminates (5E).  
+Phase 3: Browsing Items & Placing Bids (AVL Tree Execution)
+1. Item Retrieval: The user selects "Browse Auction Items". The system queries the database (4D) to check if any items are stored:   
+  •	If NO items exist: The user is redirected back to the main menu (3C). 
+  •	If items exist: The available auction items are displayed on screen.   
 
-Expected Output
-The finished program should allow users to register, browse and post items, place bids, view current highest bids, and determine auction winners. It will demonstrate how an AVL Tree can be applied to a practical auction management system while maintaining efficient data organization and retrieval.
+2. Item & Bid Selection: The user selects a specific item and enters their proposed Bid Amount.   
+3. AVL Tree Processing: The system executes the AVL Tree Method to record and evaluate the new bid:    
+  •	The bid is inserted into the AVL tree structure.   
+  •	Dynamic rotations automatically balance the tree, evaluating node values to immediately determine and track the leading bid.    
+4. Loop Option: The system asks: "Bid Again?"   
+  •	If YES: The user returns to the main menu loop (3C).   
+  •	If NO: The session exits (5E).   
+
+Phase 4: Viewing the Highest Bid
+1. Query Request: The user selects "View Highest Bid" from the main menu.   
+2. Instant Retrieval: The system traverses the balanced AVL Tree root node to extract and display the current winning bidder and bid amount instantly.   
+3. Return to Hub: After displaying the highest bidder, the system returns the user directly to the main menu (3C).
+
